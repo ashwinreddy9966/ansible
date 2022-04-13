@@ -23,3 +23,15 @@
   ansible.builtin.package:
     name: redis
     state: present
+
+- name: Updating 127.0.0.1 to 0.0.0.0
+  ansible.builtin.replace:
+    path: /etc/redis/redis.conf
+    regexp: '127.0.0.1'
+    replace: '0.0.0.0'
+
+- name: Starting {{COMPONENT}}
+  ansible.builtin.service:
+    name: "{{COMPONENT}}"
+    state: started
+    enabled: yes 
