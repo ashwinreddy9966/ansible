@@ -88,6 +88,10 @@
     login_user: root
     login_password: RoboShop@1
 
+- name: print test msg
+  debug:
+    msg: Hai
+
 
 
 
