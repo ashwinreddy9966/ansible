@@ -41,7 +41,7 @@
 #  # mongo < catalogue.js
 #  # mongo < users.js
 #
-  ```
+#  ```
   - name: Updating the mongodb repo
     ansible.builtin.copy:
       src: mongodb.repo
