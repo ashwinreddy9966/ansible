@@ -99,7 +99,7 @@
 
     - name:  Copy the SQL Reset File
       ansible.builtin.copy:
-        src: robotpass.sql
+        src: rootpass.sql
         dest: /tmp/rootpass.sql
 
     - name: Reset SQL Password
