@@ -70,7 +70,12 @@
       dest: /tmp
       remote_src: yes
 
-#  - name: Loading Schema
-#    community.mongodb.mongodb_shell:
-#      file: "/tmp"
-#      idempotent: yes
+  - name: Loading Catalogue Schema
+    community.mongodb.mongodb_shell:
+      file: /tmp/mongodb-main/catalogue.js
+      idempotent: yes
+
+  - name: Loading User Schema
+    community.mongodb.mongodb_shell:
+      file: /tmp/mongodb-main/user.js
+      idempotent: yes
