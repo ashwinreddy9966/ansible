@@ -90,9 +90,10 @@
   ignore_errors: yes
   register: mysql_stat
 
-- name: print test msg
+- name: Reset the sql password
   debug:
     msg: "{{mysql_stat}}"
+  when: mysql_stat.failed
 
 
 
