@@ -61,7 +61,7 @@
   - name: Starting MongoDB
     ansible.builtin.service:
       name: mongod
-      state: restarted
+      state: started
       enabled: yes
 
   - name: Download & Extract the schema
@@ -70,12 +70,10 @@
       dest: /tmp
       remote_src: yes
 
-  - name: Loading Catalogue Schema
+  - name: Loading Catalogue & User Schema
     community.mongodb.mongodb_shell:
-      file: /tmp/mongodb-main/catalogue.js
+      file: /tmp/mongodb-main/{{item}}.js
       idempotent: yes
-
-  - name: Loading User Schema
-    community.mongodb.mongodb_shell:
-      file: /tmp/mongodb-main/users.js
-      idempotent: yes
+    loop:
+      - catalogue
+      - users
