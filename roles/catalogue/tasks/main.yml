@@ -46,7 +46,7 @@
 #    state: restarted
 #    daemon_reload: yes
 
-- name: Configuring Catalogue
+- name: Configuring {{COMPONENT}}
   include_role:
     name: common
     tasks_from: nodejs
