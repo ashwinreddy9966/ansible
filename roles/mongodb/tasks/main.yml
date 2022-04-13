@@ -63,3 +63,14 @@
       name: mongod
       state: restarted
       enabled: yes
+
+  - name: Download & Extract the schema
+    ansible.builtin.unarchive:
+      src: "https://github.com/roboshop-devops-project/mongodb/archive/main.zip"
+      dest: /tmp
+      remote_src: yes
+
+#  - name: Loading Schema
+#    community.mongodb.mongodb_shell:
+#      file: "/tmp"
+#      idempotent: yes
