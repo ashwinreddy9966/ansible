@@ -2,3 +2,5 @@
 frontend.robotlearning.internal
 [mongodb]
 mongodb.robotlearning.internal
+[catalogue]
+catalogue.robotlearning.internal
