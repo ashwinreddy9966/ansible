@@ -87,7 +87,10 @@
   ansible.builtin.copy:
     src: systemd.service
     dest: /etc/systemd/system/{{COMPONENT}}.service
-    remote_src: yes
-    daemon_reload: yes
 
+- name: Starting {{COMPONENT}}
+  ansible.builtin.service:
+    name: {{CATALOGUE}}
+    state: restarted
+    daemon_reload: yes
 
