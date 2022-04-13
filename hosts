@@ -1,2 +1,4 @@
 [frontend]
 frontend.robotlearning.internal
+[mongodb]
+mongodb.robotlearning.internal
