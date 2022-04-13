@@ -4,3 +4,5 @@ frontend.robotlearning.internal
 mongodb.robotlearning.internal
 [catalogue]
 catalogue.robotlearning.internal
+[redis]
+redis.robotlearning.internal
