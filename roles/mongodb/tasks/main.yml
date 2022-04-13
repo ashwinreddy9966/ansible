@@ -48,12 +48,12 @@
       dest: /etc/yum.repos.d/mongodb.repo
 
   - name: Installing MongoDB
-      ansible.builtin.package:
+    ansible.builtin.package:
         name: mongodb-org
         state: present
 
-    - name: Starting MongoDB
-      ansible.builtin.service:
+  - name: Starting MongoDB
+    ansible.builtin.service:
         name: mongod
         state: started
         enabled: yes
