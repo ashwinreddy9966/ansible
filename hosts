@@ -6,3 +6,5 @@ mongodb.robotlearning.internal
 catalogue.robotlearning.internal
 [redis]
 redis.robotlearning.internal
+[user]
+user.robotlearning.internal

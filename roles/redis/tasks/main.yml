@@ -34,4 +34,4 @@
   ansible.builtin.service:
     name: "{{COMPONENT}}"
     state: started
-    enabled: yes 
+    enabled: yes
