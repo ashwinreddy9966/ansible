@@ -47,3 +47,6 @@
 
 
 
+- name: Test catalogue
+  debug:
+      msg: Testing the message
