@@ -62,4 +62,13 @@
     name: roboshop
     comment: RoboShop Application User
 
-  
+- name: Download and Extract {{COMPONENT}}
+  include_role:
+    name: common
+    tasks_from: download
+
+- name: Clearing Old Content
+  ansible.builtin.file:
+    path: /home/roboshop/{{COMPONENT}}
+    state: absent
+

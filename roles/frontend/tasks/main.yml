@@ -3,7 +3,7 @@
     name: nginx
     state: present
 
-- name: Download and Extract Frontend
+- name: Download and Extract {{COMPONENT}}
   include_role:
     name: common
     tasks_from: download
