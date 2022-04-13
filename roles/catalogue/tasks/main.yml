@@ -78,3 +78,13 @@
     dest: /home/roboshop/{{COMPONENT}}/
     remote_src: yes
   become_user: roboshop
+
+- name: Install NodeJS Packages based on package.json.
+  community.general.npm:
+    path: /home/roboshop/{{COMPONENT}}/
+
+- name: Copy {{COMPONENT}} systemd
+  ansible.builtin.copy:
+    src: systemd.service
+    dest: /etc/systemd/system/{{COMPONENT}}.service
+    remote_src: yes
