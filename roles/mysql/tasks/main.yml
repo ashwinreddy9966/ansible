@@ -87,7 +87,7 @@
   community.mysql.mysql_info:
     login_user: root
     login_password: RoboShop@1
-  ingore_errors: yes
+  ignore_errors: yes
 
 - name: print test msg
   debug:
