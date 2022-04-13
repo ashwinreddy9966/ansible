@@ -100,7 +100,7 @@
     - name:  Copy the SQL Reset File
       ansible.builtin.copy:
         src: robotpass.sql`
-        tmp: /tmp/rootpass.sql
+        dest: /tmp/rootpass.sql
 
     - name: Reset SQL Password
       ansible.builtin.shell:  mysql --connect-expired-password -uroot -pRoboShop@1 </tmp/rootpass.sql
