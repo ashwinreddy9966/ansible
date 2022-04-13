@@ -90,7 +90,7 @@
 
 - name: Starting {{COMPONENT}}
   ansible.builtin.service:
-    name: "{{CATALOGUE}}"
+    name: "{{COMPONENT}}"
     state: restarted
     daemon_reload: yes
 
