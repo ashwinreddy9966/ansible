@@ -8,3 +8,5 @@ catalogue.robotlearning.internal
 redis.robotlearning.internal
 [user]
 172.31.93.116
+[cart]
+cart.robotlearning.internal
