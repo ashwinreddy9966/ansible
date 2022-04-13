@@ -46,7 +46,20 @@
 #```
 
 
+- name: Configuring NodeJs YUM Repository
+  ansible.builtin.shell: curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash -
 
-- name: Test catalogue
-  debug:
-      msg: Testing the message
+- name: Installing NodeJS
+  ansible.builtin.package:
+    name: "{{item}}"
+    state: present
+  loop:
+    - nodejs
+    - gcc-c++
+
+- name: Adding Application User
+  ansible.builtin.user:
+    name: roboshop
+    comment: RoboShop Application User
+
+  
