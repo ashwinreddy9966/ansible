@@ -42,18 +42,21 @@
 #  # mongo < users.js
 #
 #  ```
-  - name: Updating the mongodb repo
-    ansible.builtin.copy:
-      src: mongodb.repo
-      dest: /etc/yum.repos.d/mongodb.repo
-
-  - name: Installing MongoDB
-      ansible.builtin.package:
-        name: mongodb-org
-        state: present
-
-    - name: Starting MongoDB
-      ansible.builtin.service:
-        name: mongod
-        state: started
-        enabled: yes
+#  - name: Updating the mongodb repo
+#    ansible.builtin.copy:
+#      src: mongodb.repo
+#      dest: /etc/yum.repos.d/mongodb.repo
+#
+#  - name: Installing MongoDB
+#      ansible.builtin.package:
+#        name: mongodb-org
+#        state: present
+#
+#    - name: Starting MongoDB
+#      ansible.builtin.service:
+#        name: mongod
+#        state: started
+#        enabled: yes
+- name: test msg
+  debug:
+    msg: Hello
