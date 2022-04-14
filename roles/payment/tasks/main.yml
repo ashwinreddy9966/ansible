@@ -12,11 +12,11 @@
     tasks_from: download
 
 - name: Registering the UID
-  ansible.builtin.shell: id -u roboshop
+  ansible.builtin.shell: id -u {{APPUSER}}
   register: USER
 
 - name: Registering the UGD
-  ansible.builtin.shell: id -g roboshop
+  ansible.builtin.shell: id -g {{APPUSER}}
   register: GROUP
 
 - name: Pritning Output
