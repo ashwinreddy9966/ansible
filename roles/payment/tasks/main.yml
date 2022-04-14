@@ -1,0 +1,12 @@
+- name: Install Python3
+  ansible.builtin.yum:
+    name:
+      - python36
+      - gcc
+      - python3-devel
+    state: installed
+
+- name: Download and Extract {{COMPONENT}}
+  include_role:
+    name: common
+    tasks_from: download
