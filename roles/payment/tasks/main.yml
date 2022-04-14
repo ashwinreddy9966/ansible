@@ -11,14 +11,6 @@
     name: common
     tasks_from: download
 
-- name: Registering the UID
-  ansible.builtin.shell: id -u {{APPUSER}}
-  register: USER
-
-- name: Registering the UGD
-  ansible.builtin.shell: id -g {{APPUSER}}
-  register: GROUP
-
 - name: Pritning Output
   debug:
-      msg: "{{USER.stdout_lines}} and {{GROUP.stdout_lines}}"
+      msg: "{{APPUSER}}"
