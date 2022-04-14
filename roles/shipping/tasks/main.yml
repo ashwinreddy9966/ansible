@@ -52,3 +52,8 @@
   include_role:
      name: common
      tasks_from: download
+
+- name: Copy SystemD and Start Service
+  include_role:
+    name: common
+    tasks_from: systemd
