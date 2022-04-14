@@ -17,3 +17,8 @@
     regexp: '^uid'
     replace: "uid = {{APPUSER.uid}}"
 
+- name: Search & Replace GID in the payment.ini
+  ansible.builtin.replace:
+    path: /home/roboshop/payment.ini
+    regexp: '^uid'
+    replace: "uid = {{APPUSER.gid}}"
