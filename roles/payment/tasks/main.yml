@@ -13,7 +13,7 @@
 
 - name: test op
   debug:
-    msg: {{APPUSER}}
+    msg: "{{ APPUSER }}"
 
 #- name: Search & Replace UID in the payment.ini
 #  ansible.builtin.lineinfile:
