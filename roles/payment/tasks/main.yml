@@ -21,4 +21,4 @@
 
 - name: Pritning Output
   debug:
-      msg: "{{USER}} and {{GROUP}}"
+      msg: "{{USER.stdout_lines}} and {{GROUP.stdout_lines}}"
