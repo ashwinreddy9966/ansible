@@ -10,3 +10,11 @@
   include_role:
     name: common
     tasks_from: download
+
+- name: Registering the output
+  ansible.builtin.shell: id roboshop
+  register: OUT
+
+- name: Pritning Output
+  debug:
+      msg: "{{OUT}}"
