@@ -11,10 +11,14 @@
     name: common
     tasks_from: download
 
-- name: Registering the output
-  ansible.builtin.shell: id roboshop
-  register: OUT
+- name: Registering the UID
+  ansible.builtin.shell: id -u roboshop
+  register: USER
+
+- name: Registering the UGD
+  ansible.builtin.shell: id -g roboshop
+  register: GROUP
 
 - name: Pritning Output
   debug:
-      msg: "{{OUT}}"
+      msg: "{{OUT}} and {{GROUP}}"
