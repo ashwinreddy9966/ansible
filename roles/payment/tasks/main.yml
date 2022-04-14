@@ -15,10 +15,10 @@
   ansible.builtin.lineinfile:
     path: /home/roboshop/{{COMPONENT}}/payment.ini
     regexp: '^uid'
-    line:  "uid = APPUSER.uid"
+    line:  uid = APPUSER.uid
 
 - name: Search & Replace GID in the payment.ini
   ansible.builtin.lineinfile:
     path: /home/roboshop/{{COMPONENT}}/payment.ini
     regexp: '^gid'
-    line:  "gid = APPUSER.gid"
+    line:  gid = APPUSER.gid
