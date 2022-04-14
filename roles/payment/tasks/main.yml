@@ -11,14 +11,18 @@
     name: common
     tasks_from: download
 
-- name: Search & Replace UID in the payment.ini
-  ansible.builtin.lineinfile:
-    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
-    regexp: '^uid'
-    line:  uid = "{{APPUSER.uid}}"
+- name: test op
+  debug:
+    msg: {{APPUSER}}
 
-- name: Search & Replace GID in the payment.ini
-  ansible.builtin.lineinfile:
-    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
-    regexp: '^gid'
-    line:  gid = "{{APPUSER.group}}"
+#- name: Search & Replace UID in the payment.ini
+#  ansible.builtin.lineinfile:
+#    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
+#    regexp: '^uid'
+#    line:  uid = "{{APPUSER.uid}}"
+#
+#- name: Search & Replace GID in the payment.ini
+#  ansible.builtin.lineinfile:
+#    path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
+#    regexp: '^gid'
+#    line:  gid = "{{APPUSER.group}}"
