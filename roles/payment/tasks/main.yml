@@ -5,6 +5,7 @@
       - gcc
       - python3-devel
     state: installed
+
 - name: Download and Extract {{COMPONENT}}
   include_role:
     name: common
