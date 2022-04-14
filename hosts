@@ -12,3 +12,5 @@ redis.robotlearning.internal
 cart.robotlearning.internal
 [mysql]
 mysql.robotlearning.internal
+[shipping]
+shipping.robotlearning.internal
