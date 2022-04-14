@@ -12,13 +12,13 @@
     tasks_from: download
 
 - name: Search & Replace UID in the payment.ini
-  ansible.builtin.replace:
+  ansible.builtin.lineinfile:
     path: /home/roboshop/payment.ini
     regexp: '^uid'
-    replace: "uid = {{APPUSER.uid}}"
+    line:  "uid = {{APPUSER.uid}}"
 
 - name: Search & Replace GID in the payment.ini
-  ansible.builtin.replace:
+  ansible.builtin.lineinfile:
     path: /home/roboshop/payment.ini
-    regexp: '^uid'
-    replace: "uid = {{APPUSER.gid}}"
+    regexp: '^gid'
+    line:  "gid = {{APPUSER.gid}}"
