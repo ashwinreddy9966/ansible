@@ -1,0 +1,20 @@
+- name: Installing Maven
+  ansible.builtin.package:
+    name: maven
+    state: present
+
+- name: Download and extract {{COMPONENT}} and create App User
+  include_role:
+    name: common
+    tasks_from: download
+
+- name: Make maven package
+  ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
+  args:
+    chdir: /home/roboshop/{{COMPONENT}}
+  become_user: roboshop
+
+- name: Copy SystemD and Start Service
+  include_role:
+    name: common
+    tasks_from: systemd
