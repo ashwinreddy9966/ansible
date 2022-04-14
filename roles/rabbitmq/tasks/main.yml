@@ -1,0 +1,56 @@
+### **Manual Installation**
+#
+#  1. Erlang is a dependency which is needed for RabbitMQ.
+#
+#  ```sql
+#  # yum install https://github.com/rabbitmq/erlang-rpm/releases/download/v23.2.6/erlang-23.2.6-1.el7.x86_64.rpm -y
+#  ```
+#
+#  1. Setup YUM repositories for RabbitMQ.
+#
+#  ```sql
+#  # curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
+#  ```
+#
+#  1. Install RabbitMQ
+#
+#  ```sql
+#  # yum install rabbitmq-server -y
+#  ```
+#
+#  1. Start RabbitMQ
+#
+#  ```sql
+#  # systemctl enable rabbitmq-server
+#  # systemctl start rabbitmq-server
+#  ```
+#
+#  RabbitMQ comes with a default username / password as `guest`/`guest`. But this user cannot be used to connect. Hence we need to create one user for the application.
+#
+#  1. Create application user
+- name: Setup YUM repos
+  ansible.builtin.shell:
+    - yum install https://github.com/rabbitmq/erlang-rpm/releases/download/v23.2.6/erlang-23.2.6-1.el7.x86_64.rpm -y
+    - curl -s https://packagecloud.io/install/repositories/rabbitmq/rabbitmq-server/script.rpm.sh | sudo bash
+
+- name: Installing {{COMPONENT}}
+  ansible.builtin.package:
+    name: rabbitmq-server
+    state: present
+
+- name: Starting {{COMPONENT}}
+  ansible.builtin.service:
+    name: rabbitmq-server
+    state: started
+    daemon_reload: yes
+    enabled: yes
+
+- name: Add RabbitMQ Application User
+  community.rabbitmq.rabbitmq_user:
+    user: roboshop
+    password: roboshop123
+    vhost: /
+    configure_priv: .*
+    read_priv: .*
+    write_priv: .*
+    state: present
