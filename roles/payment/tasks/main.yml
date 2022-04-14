@@ -11,6 +11,9 @@
     name: common
     tasks_from: download
 
-- name: Pritning Output
-  debug:
-      msg: "{{APPUSER}}"
+- name: Search & Replace UID in the payment.ini
+  ansible.builtin.replace:
+    path: /home/roboshop/payment.ini
+    regexp: '^uid'
+    replace: "uid = {{APPUSER.uid}}"
+
