@@ -22,9 +22,6 @@
     remote_src: yes
   become_user: roboshop
 
-- name: Installing python dependencies as per requirements file
-  pip:
-    requirements: /home/roboshop/{{COMPONENT}}/requirements.txt
-    executable: pip3
+
 
 -
