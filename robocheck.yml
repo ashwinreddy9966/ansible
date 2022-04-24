@@ -41,6 +41,7 @@
     - name: Import the role
       import_role:
          name: "{{role_name }}"
+      ignore_errors: yes
 
     - name: Terminate Instance
       amazon.aws.ec2:
