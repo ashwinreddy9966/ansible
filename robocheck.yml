@@ -7,7 +7,6 @@
         image: ami-0bb6af715826253bf
         wait: yes
         wait_timeout: 60
-        assign_public_ip: yes
         group_id: sg-01707a1347b204f43
         count: 1
         region: us-east-1
