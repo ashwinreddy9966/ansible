@@ -37,7 +37,7 @@
     - name: Testing the role
       hosts: launched
       become: True
-      ingore_erros: yes
+      ignore_erros: yes
       roles:
         - "{{ role_name }}"
 
