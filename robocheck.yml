@@ -34,6 +34,10 @@
         timeout: 90
       loop: "{{ ec2.instances }}"
 
+    - name: Test Msg
+      debug:
+        msg: "Test Run"
+
     - name: Terminate Instance
       amazon.aws.ec2:
         region: "{{ region }}"
