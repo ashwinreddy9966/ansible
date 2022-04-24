@@ -37,7 +37,6 @@
     - name: Testing the role
       hosts: launched
       become: True
-      gather_facts: True
       ingore_erros: yes
       roles:
         - "{{ role_name }}"
