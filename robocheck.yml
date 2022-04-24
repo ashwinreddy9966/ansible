@@ -7,7 +7,7 @@
   vars:
     instance_type: t3.micro
     security_group_id: "sg-01707a1347b204f43"
-    image: ami-0bb6af715826253bf
+    image: ami-0be8b202e69bf1313
     region: us-east-1
   tasks:
     - name: Launch instance
@@ -30,8 +30,8 @@
     - name: Wait for SSH to come up
       delegate_to: "{{ item.public_ip }}"
       wait_for_connection:
-        delay: 20
-        timeout: 60
+        delay: 30
+        timeout: 120
       loop: "{{ ec2.instances }}"
 
 #    - name: Testing the role
