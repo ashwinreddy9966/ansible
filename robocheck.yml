@@ -34,17 +34,19 @@
         timeout: 60
       loop: "{{ ec2.instances }}"
 
+    - name: Testing the role
+      hosts: launched
+      become: True
+      gather_facts: True
+      ingore_erros: yes
+      roles:
+        - "{{ role_name }}"
+
+
     - name: Terminate Instance
       amazon.aws.ec2:
         region: "{{ region }}"
         state: 'absent'
         instance_ids: '{{ ec2.instance_ids }}'
 
-#    - name: Testing the role
-#      hosts: launched
-#      become: True
-#      gather_facts: True
-#      ingore_erros: yes
-#      roles:
-#        - "{{ role_name }}"
 
