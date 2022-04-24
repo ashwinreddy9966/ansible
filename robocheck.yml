@@ -5,10 +5,10 @@
   hosts: localhost
   gather_facts: False
   vars:
-    instance_type: t3.micro
+    instance_type: "t3.micro"
     security_group_id: "sg-01707a1347b204f43"
-    image: ami-0be8b202e69bf1313
-    region: us-east-1
+    image: "ami-0bb6af715826253bf"
+    region: "us-east-1"
   tasks:
     - name: Launch instance
       amazon.aws.ec2:
