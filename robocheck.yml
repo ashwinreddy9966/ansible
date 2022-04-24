@@ -33,6 +33,7 @@
         delay: 60
         timeout: 90
       loop: "{{ ec2.instances }}"
+      ignore_errors: yes
 
     - name: Set a Instance_ID Variable
       set_fact:
