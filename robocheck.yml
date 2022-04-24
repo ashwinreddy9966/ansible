@@ -38,6 +38,10 @@
       debug:
         msg: "Test Run"
 
+    - name: Import the role
+      import_role:
+         name: "{{role_name }}"
+
     - name: Terminate Instance
       amazon.aws.ec2:
         region: "{{ region }}"
