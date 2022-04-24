@@ -34,11 +34,9 @@
         timeout: 90
       loop: "{{ ec2.instances }}"
 
-    - name: Testing the role
-      become: yes
-      ignore_erros: yes
-      roles:
-        - "{{ role_name }}"
+    - name:
+      msg:
+        debug: testing the role
 
     - name: Terminate Instance
       amazon.aws.ec2:
