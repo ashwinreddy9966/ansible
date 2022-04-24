@@ -10,6 +10,6 @@
         assign_public_ip: yes
         group_id: sg-01707a1347b204f43
         count: 1
-#        region: us-east-1
+        region: us-east-1
         instance_tags:
           Name: ansible-dryrun-check
