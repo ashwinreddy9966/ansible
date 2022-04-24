@@ -28,18 +28,17 @@
       loop: "{{ ec2.instances }}"
 
     - name: Wait for SSH to come up
-      delegate_to: "{{ item.public_dns_name }}"
+      delegate_to: "{{ item.public_ip }}"
       wait_for_connection:
         delay: 20
         timeout: 60
       loop: "{{ ec2.instances }}"
 
-#    - name: Testing the role
-#      become: yes
-#      ignore_erros: yes
-#      roles:
-#        - "{{ role_name }}"
-
+    - name: Testing the role
+      become: yes
+      ignore_erros: yes
+      roles:
+        - "{{ role_name }}"
 
     - name: Terminate Instance
       amazon.aws.ec2:
