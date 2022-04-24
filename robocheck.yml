@@ -12,7 +12,7 @@
   tasks:
     - name: Launch instance
       amazon.aws.ec2:
-        groupid: "{{ security_group_id }}"
+        group_id: "{{ security_group_id }}"
         instance_type: "{{ instance_type }}"
         image: "{{ image }}"
         wait: true
