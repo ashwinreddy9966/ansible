@@ -35,7 +35,6 @@
       loop: "{{ ec2.instances }}"
 
     - name: Terminate Instance
-      hosts: localhost
       tasks:
         - name: Terminate instances that were previously launched
           amazon.aws.ec2:
