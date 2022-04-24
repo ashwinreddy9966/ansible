@@ -34,20 +34,32 @@
         timeout: 90
       loop: "{{ ec2.instances }}"
 
-    - name: Test Msg
-      debug:
-        msg: "Test Run"
+    - name: Set a Instance_ID Variable
+      set_fact:
+        INSTANCE_ID: "{{ ec2.instance_ids }}"
+
+- name: Dry-Run the Role and Terminate the instance
+  hosts: launched
+  gather_facts: Yes
+  tasks:
+    - name: set the facts per host
+      set_fact:
+        INSTANCE_ID: "{{hostvars['localhost']['INSTANCE_ID']}}"
 
     - name: Import the role
-      import_role:
-         name: "{{role_name }}"
-      ignore_errors: yes
-      become: yes
+      block:
+        - name: Import a role
+          import_role:
+            name: "{{role_name}}"
+          ignore_errors: yes
+      always:
+        - name: Terminate instances that were previously launched
+          delegate_to: 127.0.0.1
+          amazon.aws.ec2:
+            state: 'absent'
+            instance_ids: '{{ INSTANCE_ID }}'
+            region: us-east-1
 
-    - name: Terminate Instance
-      amazon.aws.ec2:
-        region: "{{ region }}"
-        state: 'absent'
-        instance_ids: '{{ ec2.instance_ids }}'
+
 
 
