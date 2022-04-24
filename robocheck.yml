@@ -52,7 +52,6 @@
           import_role:
             name: "{{role_name}}"
           ignore_errors: yes
-          become: yes
       always:
         - name: Terminate instances that were previously launched
           delegate_to: 127.0.0.1
