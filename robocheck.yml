@@ -2,6 +2,7 @@
   hosts: localhost
   tasks:
     - name: EC2 Creation
+      amazon.aws.ec2:
         instance_type: t2.micro
         image: ami-0bb6af715826253bf
         wait: yes
