@@ -35,8 +35,7 @@
       loop: "{{ ec2.instances }}"
 
     - name: Testing the role
-      hosts: launched
-      become: True
+      become: yes
       ignore_erros: yes
       roles:
         - "{{ role_name }}"
