@@ -34,7 +34,7 @@
         timeout: 60
       loop: "{{ ec2.instances }}"
 
-    - name: Run the role
+    - name: Testing the role
       hosts: launched
       become: True
       gather_facts: True
