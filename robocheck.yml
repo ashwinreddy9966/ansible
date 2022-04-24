@@ -6,7 +6,7 @@
   gather_facts: False
   vars:
     instance_type: t3.micro
-    security_group_id: sg-01707a1347b204f43
+    security_group_id: "sg-01707a1347b204f43"
     image: ami-0bb6af715826253bf
     region: us-east-1
   tasks:
