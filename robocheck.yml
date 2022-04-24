@@ -34,11 +34,11 @@
         timeout: 60
       loop: "{{ ec2.instances }}"
 
-    - name: Testing the role
-      become: yes
-      ignore_erros: yes
-      roles:
-        - "{{ role_name }}"
+#    - name: Testing the role
+#      become: yes
+#      ignore_erros: yes
+#      roles:
+#        - "{{ role_name }}"
 
 
     - name: Terminate Instance
