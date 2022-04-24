@@ -1,0 +1,13 @@
+- name: Playbook to create the ec2, do a run run and then self-destroy
+  hosts: localhost
+  tasks:
+    - name: EC2 Creation
+        instance_type: t2.micro
+        image: ami-0bb6af715826253bf
+        wait: yes
+        wait_timeout: 60
+        assign_public_ip: yes
+        group_id: sg-01707a1347b204f43
+        count: 1
+        instance_tags:
+          Name: ansible-dryrun-check
