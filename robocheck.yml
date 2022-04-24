@@ -34,13 +34,13 @@
         timeout: 60
       loop: "{{ ec2.instances }}"
 
-    - name: Testing the role
-      hosts: launched
-      become: True
-      gather_facts: True
-      ingore_erros: yes
-      roles:
-        - "{{ role_name }}"
+#    - name: Testing the role
+#      hosts: launched
+#      become: True
+#      gather_facts: True
+#      ingore_erros: yes
+#      roles:
+#        - "{{ role_name }}"
 
     - name: Terminate instances
       hosts: localhost
