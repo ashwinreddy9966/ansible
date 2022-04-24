@@ -30,8 +30,8 @@
     - name: Wait for SSH to come up
       delegate_to: "{{ item.public_ip }}"
       wait_for_connection:
-        delay: 60
-        timeout: 120
+        delay: 40
+        timeout: 90
       loop: "{{ ec2.instances }}"
 
 #    - name: Testing the role
