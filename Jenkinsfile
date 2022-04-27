@@ -18,6 +18,7 @@ pipeline {
         when { branch 'main' }
          steps {
               sh "echo $BRANCH_NAME"
+              sh "echo testing the tags"
            }
         }
     }
