@@ -15,7 +15,7 @@ pipeline {
            }
         }
         stage('When Tag ') {
-        when { expression { env.TAG_NAME == ".*" } }
+        when { expression { env.TAG_NAME != null  } }
         steps
            {
             sh "env"
