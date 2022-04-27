@@ -6,6 +6,7 @@ pipeline {
         steps {
             sh "echo Lint Check Going On feature branch"
             sh "env"
+            sh "whoami"
            }
         }
         stage('Doing a Dry-Run, when PR ') {
