@@ -2,7 +2,7 @@ pipeline {
   agent any
   options { skipDefaultCheckout() }
     stages {
-        stage('Do this on commits to feature') {
+        stage('Runs only on feature branch commints') {
         when { branch pattern: "feature-.*", comparator: "REGEXP"}
         steps {
             sh "echo Lint Check Going On feature branch"
@@ -21,6 +21,7 @@ pipeline {
         when { branch 'main' }
          steps {
               sh "env"
+              sh "echo TEST COMMIT"
               sh "echo $BRANCH_NAME"
            }
         }
