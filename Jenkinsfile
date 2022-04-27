@@ -10,6 +10,7 @@ pipeline {
            }
         }
         stage('Doing a Dry-Run, when PR ') {
+        when { branch pattern: "PR-.*", comparator: "REGEXP"}
         steps
            {
              sh "env"
