@@ -1,5 +1,6 @@
 pipeline {
   agent any
+  options { skipDefaultCheckout() }
     stages {
         stage('Doing a Dry-Run') {
         steps
