@@ -15,7 +15,7 @@ pipeline {
 //             }
 //         }
         stage('When changes in main branch') {
-        when { branch 'main' }
+//        when { branch 'main' }
          steps {
                  sh "env"
 //               sh "echo testing the tags"
