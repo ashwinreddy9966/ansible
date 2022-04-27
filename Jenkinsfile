@@ -6,10 +6,11 @@ pipeline {
         steps {
             sh "echo Lint Check Going On feature branch"
             sh "env"
-            sh "whoami"
+            sh "ls"
            }
         }
         stage('Doing a Dry-Run, when PR ') {
+        when { branch pattern: "PR-.*", comparator: "REGEXP"}
         steps
            {
              sh "env"
@@ -21,6 +22,7 @@ pipeline {
         when { branch 'main' }
          steps {
               sh "env"
+              sh "ls -ltr"
               sh "echo TEST COMMIT"
               sh "echo $BRANCH_NAME"
            }
