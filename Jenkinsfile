@@ -1,6 +1,5 @@
 pipeline {
   agent any
-  options { skipDefaultCheckout() }
     stages {
         stage('Runs only on feature branch commints') {
         when { branch pattern: "feature-.*", comparator: "REGEXP"}
