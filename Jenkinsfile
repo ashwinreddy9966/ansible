@@ -20,7 +20,9 @@ pipeline {
         steps
            {
             sh "env"
-            sh "bash -x get-tag.sh"
+            sh "pwd"
+            sh "ls -ltr"
+            //sh "bash -x get-tag.sh"
             }
         }
     }
