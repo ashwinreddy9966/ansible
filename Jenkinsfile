@@ -22,6 +22,7 @@ pipeline {
             sh "env"
             sh "pwd"
             sh "ls -ltr"
+            sh "git tag -l"
             //sh "bash -x get-tag.sh"
             }
         }
