@@ -1,10 +1,7 @@
 pipeline {
   agent any
   environment {
-      GIT_PWD = credentials('GitHub-Password')
-      GIT_USR = credentials('GitHub-OnlyUsername')
-      GIT_TOKEN = credentials('GitHub-OnlyToken')
-
+      GIT = credentials('GitHub-Cred')
     }
     stages {
        stage('Ansible Style Check on feature branch only') {
@@ -25,12 +22,12 @@ pipeline {
         when { branch 'main' }
         steps {
           dir('CODE') {
-          git branch: 'main', credentialsId: 'GitHub-Token', url: 'https://github.com/ashwinreddy9966/ansible.git'
+          git branch: 'main', url: 'https://ashwinreddy9966@Devops@135.:github.com/ashwinreddy9966/ansible'
            sh '''
             ls -ltr
             TAG=$(bash -x get-tag.sh)
             git tag $TAG
-           // git push --tags
+            git push --tags
             '''
                   }
                }
