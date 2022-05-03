@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-      GIT_PWD = crendetials('GitHub-Password')
+      GIT_PWD = crendentials('GitHub-Password')
     }
     stages {
        stage('Ansible Style Check on feature branch only') {
