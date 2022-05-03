@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-      GIT = credentials('Git-Username-Token')
+      GIT = credentials('GitHub-Cred')
     }
     stages {
        stage('Ansible Style Check on feature branch only') {
