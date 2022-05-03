@@ -1,5 +1,8 @@
 pipeline {
   agent any
+  environment {
+      GIT_PWD = crendetials('GitHub-Password')
+    }
     stages {
        stage('Ansible Style Check on feature branch only') {
         when { branch pattern: "feature-.*", comparator: "REGEXP"}
@@ -19,7 +22,7 @@ pipeline {
         when { branch 'main' }
         steps {
            dir('CODE') {
-          git branch: 'main', credentialsId: 'GitHub-Token', url: 'https://github.com/ashwinreddy9966/ansible.git'
+          git branch: 'main', credentialsId: 'GitHub-Token', url: 'https://thecloudcareers@${GIT_PWD}:github.com/ashwinreddy9966/ansible.git'
            sh '''
             TAG=$(bash -x get-tag.sh)
             git tag $TAG
