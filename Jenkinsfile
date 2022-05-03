@@ -29,7 +29,7 @@ pipeline {
            sh '''
             TAG=$(bash -x get-tag.sh)
             git tag $TAG
-            git push origin --tags
+            git push --tags
             '''
                   }
                }
