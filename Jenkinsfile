@@ -3,6 +3,7 @@ pipeline {
   environment {
       GIT_PWD = credentials('GitHub-Password')
       GIT_USR = credentials('GitHub-OnlyUsername')
+      GIT_TOKEN = credentials('GitHub-OnlyToken')
 
     }
     stages {
@@ -24,7 +25,7 @@ pipeline {
         when { branch 'main' }
         steps {
           dir('CODE') {
-          git branch: 'main', credentialsId: 'GitHub-Token', url: "https://${GIT_USR}@${GIT_PWD}:github.com/ashwinreddy9966/ansible.git"
+          git branch: 'main', credentialsId: 'GitHub-Token', url: "https://${GIT_USR}@${GIT_TOKEN}:github.com/ashwinreddy9966/ansible.git"
            sh '''
             TAG=$(bash -x get-tag.sh)
             git tag $TAG
