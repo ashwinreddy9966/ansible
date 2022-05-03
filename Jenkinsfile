@@ -7,7 +7,7 @@ pipeline {
        stage('Ansible Style Check on feature branch only') {
         when { branch pattern: "feature-.*", comparator: "REGEXP"}
         steps {
-            sh "Ansible Lint Checks or Style Checks"
+            sh "echo Ansible Lint Checks or Style Checks"
            }
         }
         stage('Doing Dry-Run when a PR is placed') {
@@ -15,7 +15,7 @@ pipeline {
          steps {
                  sh "env"
              //    sh "ansible-playbook robocheck.yml -e ansible_user=centos -e role_name=frontend -e ansible_password=DevOps321 -e ENV=sandbox -e CHECK_MODE=true"
-                 sh "Testing the PR, with a dry-run"
+                 sh "echo Testing the PR, with a dry-run"
            }
         }
         stage('Tag') {
