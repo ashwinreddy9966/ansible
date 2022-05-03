@@ -32,10 +32,11 @@ pipeline {
                   }
                }
             }
-            post {
-            always {
-                cleanWs()
-              }
-            }
         }
+      post {
+          // Clean after build
+          always {
+              cleanWs()
+          }
+      }
     }
