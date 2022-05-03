@@ -17,13 +17,16 @@ pipeline {
         }
         stage('Tag') {
         when { branch 'main' }
-        steps
-           {
+        steps {
+           dir('CODE') {
+           git branch: 'main', credentialsId: 'GitHub-Token', url: 'https://github.com/ashwinreddy9966/ansible.git' {
             sh "env"
             sh "pwd"
             sh "ls -ltr"
             sh "git tag -l"
             //sh "bash -x get-tag.sh"
+                  }
+               }
             }
         }
     }
