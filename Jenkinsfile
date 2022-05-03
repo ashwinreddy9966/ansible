@@ -7,7 +7,7 @@ pipeline {
        stage('Ansible Style Check on feature branch only') {
         when { branch pattern: "feature-.*", comparator: "REGEXP"}
         steps {
-            sh "Ansible Lint Checks"
+            sh "Ansible Lint Checks or Style Checks"
            }
         }
         stage('Doing Dry-Run when a PR is placed') {
