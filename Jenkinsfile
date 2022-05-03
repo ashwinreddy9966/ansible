@@ -22,7 +22,7 @@ pipeline {
         when { branch 'main' }
         steps {
            dir('CODE') {
-          git branch: 'main', credentialsId: 'GitHub-Token', url: "https://thecloudcareers@${GIT_PWD}:github.com/ashwinreddy9966/ansible.git"
+          git branch: 'main', credentialsId: 'GitHub-Token', url: "https://ashwinreddy9966@${GIT_PWD}:github.com/ashwinreddy9966/ansible.git"
            sh '''
             TAG=$(bash -x get-tag.sh)
             git tag $TAG
