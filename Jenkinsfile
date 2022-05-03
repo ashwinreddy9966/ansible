@@ -28,6 +28,7 @@ pipeline {
             TAG=$(bash -x get-tag.sh)
             git tag $TAG
             git push --tags
+            echo "tag pushed $TAG"
             '''
                   }
                }
