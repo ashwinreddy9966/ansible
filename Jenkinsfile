@@ -10,7 +10,7 @@ pipeline {
             sh "Ansible Lint Checks"
            }
         }
-        stage('Run Dry-Run when a PR is placed') {
+        stage('Doing Dry-Run when a PR is placed') {
          when { branch pattern: "PR-.*", comparator: "REGEXP"}
          steps {
                  sh "env"
