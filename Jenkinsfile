@@ -19,7 +19,7 @@ pipeline {
         when { branch 'main' }
         steps {
            dir('CODE') {
-           git branch: 'main', credentialsId: 'GitHub-Token', url: 'https://github.com/ashwinreddy9966/ansible.git' {
+           git branch: 'main', url: 'https://github.com/ashwinreddy9966/ansible.git'
             sh "env"
             sh "pwd"
             sh "ls -ltr"
