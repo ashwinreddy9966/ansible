@@ -25,7 +25,8 @@ pipeline {
           git branch: 'main', url: "https://${GIT_USR}:${GIT_PSW}@github.com/ashwinreddy9966/ansible"
            sh '''
             ls -ltr
-            TAG=$(bash -x get-tag.sh)
+            TAG=$(cat VERSIONS.md |head -1 |sed s/#//g)
+           # TAG=$(bash -x get-tag.sh)
             git tag $TAG
             git push --tags
             echo "tag pushed $TAG"
