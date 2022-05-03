@@ -20,11 +20,10 @@ pipeline {
         steps {
            dir('CODE') {
            git branch: 'main', url: 'https://github.com/ashwinreddy9966/ansible.git'
-            sh "env"
-            sh "pwd"
-            sh "ls -ltr"
-            sh "git tag -l"
-            sh "bash -x get-tag.sh"
+           sh '''
+            TAG=$(bash -x get-tag.sh)
+            echo $TAG
+            '''
                   }
                }
             }
