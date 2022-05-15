@@ -3,10 +3,10 @@
       src: mongodb.repo
       dest: /etc/yum.repos.d/mongodb.repo
 
-  - name: Installing MongoDB
-    ansible.builtin.package:
-        name: mongodb-org
-        state: present
+  - name: Skipping Cloud SDK
+    ansible.builtin.shell:
+      cmd: yum-config-manager --save --setopt=google-cloud-sdk.skip_if_unavailable=true
+    become: yes
 
   - name: Updating 127.0.0.1 to 0.0.0.0
     ansible.builtin.replace:
