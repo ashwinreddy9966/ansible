@@ -28,6 +28,7 @@
   ansible.builtin.file:
     path:  /home/roboshop/{{COMPONENT}}
     state: directory
+    mode: '0775'
   become_user: roboshop
 
 - name: Download and Extract {{COMPONENT}}
