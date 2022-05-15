@@ -35,10 +35,10 @@
   community.general.npm:
     path: /home/roboshop/{{COMPONENT}}/
 
-- name: Copy {{COMPONENT}} systemd
-  ansible.builtin.copy:
-    src: systemd.service
-    dest: /etc/systemd/system/{{COMPONENT}}.service
+- name: Copy SystemD and Start Service
+  include_role:
+    name: common
+    tasks_from: systemd
 
 - name: Starting {{COMPONENT}}
   ansible.builtin.service:
