@@ -11,10 +11,10 @@
 
 - name: Create a directory if it does not exist
   ansible.builtin.file:
-    path:  /home/roboshop/{{COMPONENT}}
+    path:  /usr/share/nginx/html
     state: directory
     mode: '0775'
-  become_user: roboshop
+  become_user: root
 
 - name: Download and Extract {{COMPONENT}}
   ansible.builtin.unarchive:
