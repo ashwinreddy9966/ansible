@@ -23,7 +23,7 @@
   - name: Download and Extract Mongodb Schema
     include_role:
       name: common
-      tasks_from: download
+      tasks_from: download-from-github
 
   - name: Loading Catalogue & User Schema
     community.mongodb.mongodb_shell:
