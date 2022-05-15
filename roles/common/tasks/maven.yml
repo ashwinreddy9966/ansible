@@ -8,11 +8,12 @@
     name: common
     tasks_from: download
 
-- name: Make maven package
-  ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
-  args:
-    chdir: /home/roboshop/{{COMPONENT}}
-  become_user: roboshop
+# Commenting this as package will be downloaded from the CI'ed Nexus
+#- name: Make maven package
+#  ansible.builtin.shell: mvn clean package && mv target/shipping-1.0.jar shipping.jar
+#  args:
+#    chdir: /home/roboshop/{{COMPONENT}}
+#  become_user: roboshop
 
 - name: Copy SystemD and Start Service
   include_role:
