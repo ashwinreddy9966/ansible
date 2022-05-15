@@ -133,7 +133,7 @@
 - name: Download and Extract MySQL
   include_role:
     name: common
-    tasks_from: download
+    tasks_from: download-from-github
 
 - name: Load Schema
   community.mysql.mysql_db:
