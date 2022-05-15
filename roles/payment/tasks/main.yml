@@ -20,13 +20,13 @@
   ansible.builtin.lineinfile:
     path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
     regexp: '^uid'
-    line:  uid = "{{ APPUSER.uid }}"
+    line:  uid = {{ APPUSER.uid }}
 
 - name: Search & Replace GID in the payment.ini
   ansible.builtin.lineinfile:
     path: /home/roboshop/{{COMPONENT}}/{{COMPONENT}}.ini
     regexp: '^gid'
-    line:  gid = "{{ APPUSER.group }}"
+    line:  gid = {{ APPUSER.group }}
 
 - name: Copy SystemD and Start Service
   include_role:
