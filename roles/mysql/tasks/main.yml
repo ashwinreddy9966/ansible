@@ -83,6 +83,11 @@
     state: started
     enabled: yes
 
+- name: Install PyMySQL
+  pip:
+    name: PyMySQL
+    executable: pip3
+
 - name: Check the DB Password by collecting information
   community.mysql.mysql_info:
     login_user: root
