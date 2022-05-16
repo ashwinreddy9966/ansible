@@ -30,6 +30,12 @@
     regexp: '127.0.0.1'
     replace: '0.0.0.0'
 
+- name: Disable Projected Mode
+  ansible.builtin.replace:
+    path: /etc/redis/redis.conf
+    regexp: 'protected-mode yes'
+    replace: 'protected-mode no'
+
 - name: Starting {{COMPONENT}}
   ansible.builtin.service:
     name: "{{COMPONENT}}"
