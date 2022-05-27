@@ -57,3 +57,4 @@
 
 - name: Printing the secret
   set_fact:
+    secrets: "{{out.stdout}}"
