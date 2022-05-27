@@ -52,4 +52,4 @@
     tasks_from: nodejs
 
 - name: lookup secretsmanager secret in the current region
-  debug: msg="{{ lookup('amazon.aws.aws_secret', 'dev/roboshop/secrets', bypath=true) }}"
+  debug: msg="{{ lookup('amazon.aws.aws_secret', 'dev/roboshop/secrets', 'region=us-east1') }}"
