@@ -1,1 +1,2 @@
 COMPONENT: catalogue
+MONGO_CONNECT: true
