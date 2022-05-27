@@ -55,6 +55,10 @@
   shell: "echo {{ lookup('amazon.aws.aws_secret', 'dev/roboshop/secrets', region='us-east-1') | to_json }} | jq"
   register: out
 
-- name: Printing the secret
+- name: fetching the secret
   set_fact:
     secrets: "{{out.stdout | from_json}}"
+
+- name: printing secret
+  debug:
+      msg: {{secrets}}
