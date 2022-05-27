@@ -56,5 +56,4 @@
   register: out
 
 - name: Printing the secret
-  debug:
-    msg: "{{out}}"
+  debug: msg="{{out.stdout}}"
