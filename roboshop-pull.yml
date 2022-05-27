@@ -1,5 +1,7 @@
 - name: Setup Roboshop Project
   hosts: localhost
   become: yes
+  vars:
+    secrets: true
   roles:
     - "{{ COMPONENT }}"
