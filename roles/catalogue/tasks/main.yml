@@ -61,4 +61,4 @@
 
 - name: printing secret
   debug:
-      msg: {{secrets}}
+      msg: "{{secrets}}"
