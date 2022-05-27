@@ -52,7 +52,7 @@
 #    tasks_from: nodejs
 
 - name: lookup secretsmanager secret in the current region
-  shell: " echo {{ lookup('amazon.aws.aws_secret', 'dev/roboshop/secrets', region='us-east-1') }} > /tmp/out"
+  shell: " echo {{ lookup('amazon.aws.aws_secret', 'dev/roboshop/secrets', region='us-east-1') | to_json }} > /tmp/out"
   register: out
 
 - name: Printing the secret
