@@ -35,6 +35,11 @@
   community.general.npm:
     path: /home/roboshop/{{COMPONENT}}/
 
+- name: Secret Lookup
+  ansible.builtin.include_role:
+    name: common
+    tasks_from: aws-secret-manager
+
 - name: Copy SystemD and Start Service
   include_role:
     name: common

@@ -51,7 +51,3 @@
     name: common
     tasks_from: nodejs
 
-- name: Secret Lookup
-  ansible.builtin.include_role:
-    name: common
-    tasks_from: aws-secret-manager
