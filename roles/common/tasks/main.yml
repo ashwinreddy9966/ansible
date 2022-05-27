@@ -1,0 +1,10 @@
+- name: Setup HostName
+  shell: set-hostname {{COMPONENT}}
+
+- name: Install AWS Boto Python Modules
+  pip:
+    name: "{{item}}"
+    executable: pip3
+  loop:
+    - botocore
+    - boto3
