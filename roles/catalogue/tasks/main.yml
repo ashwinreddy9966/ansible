@@ -51,14 +51,3 @@
     name: common
     tasks_from: nodejs
 
-- name: lookup secretsmanager secret in the current region
-  shell: "echo {{ lookup('amazon.aws.aws_secret', 'dev/roboshop/secrets', region='us-east-1') | to_json }} | jq"
-  register: out
-
-- name: fetching the secret
-  set_fact:
-    secrets: "{{out.stdout | from_json}}"
-
-- name: printing secret
-  debug:
-      msg: "{{secrets.DOCUMENTDB_MASTER_PASSWORD}}"
