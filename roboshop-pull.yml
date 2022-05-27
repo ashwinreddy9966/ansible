@@ -2,6 +2,6 @@
   hosts: localhost
   become: yes
   vars:
-    secrets: true
+    secrets: xxx
   roles:
     - "{{ COMPONENT }}"
