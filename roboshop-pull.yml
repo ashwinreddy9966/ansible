@@ -1,5 +1,11 @@
+#- name: Setup Roboshop Project
+#  hosts: localhost
+#  become: yes
+#  roles:
+#    - "{{ COMPONENT }}"
+
 - name: Setup Roboshop Project
-  hosts: localhost
+  hosts: "{{  }}"
   become: yes
   roles:
     - "{{ COMPONENT }}"
