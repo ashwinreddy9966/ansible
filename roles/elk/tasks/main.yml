@@ -1,9 +1,9 @@
-- name: Copy logstash configuration
-  template: logstash.conf
+- name: Copy LogStash Configuration
+  template:
     src: logstash.conf
     dest: /etc/logstash/conf.d/logstash.conf
 
-- name: Restart logstash
+- name: Restart LogStash
   systemd:
     name: logstash
     state: restarted
