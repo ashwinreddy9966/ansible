@@ -5,7 +5,7 @@
 #    - "{{ COMPONENT }}"
 
 - name: Setup Roboshop Project
-  hosts: "{{  }}"
+  hosts: "{{HOST}}"
   become: yes
   roles:
-    - "{{ COMPONENT }}"
+    - "{{role_name}}"
