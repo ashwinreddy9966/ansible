@@ -1,6 +1,6 @@
 - name: Copy logstash configuration
   template: logstash.conf
-    src: logstahs.conf
+    src: logstash.conf
     dest: /etc/logstash/conf.d/logstash.conf
 
 - name: Restart logstash
