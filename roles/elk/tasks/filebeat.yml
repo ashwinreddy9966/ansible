@@ -1,3 +1,5 @@
+
+
 - name: Copy the elastic beats repo
   template:
     src: elastic.repo
