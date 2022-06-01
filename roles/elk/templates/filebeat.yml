@@ -3,9 +3,8 @@ filebeat.inputs:
   - type: log
     enabled: true
 {% if logType == "json" %}
-
-{% endif %}
     json.keys_under_root: true
+{% endif %}
     paths:
       - /var/log/{{COMPONENT}}.log
     fields:
