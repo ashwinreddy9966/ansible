@@ -4,11 +4,11 @@ filebeat.inputs:
     enabled: true
     json.keys_under_root: true
     paths:
-      - /var/log/cart.log
+      - /var/log/{{COMPONENT}}.log
     fields:
-      appName: cart
-      env: dev
-      logType: json
+      appName: {{COMPONENT}}
+      env: {{ENV}}
+      logType: 
 
 output.logstash:
   hosts: ["172.31.85.8:5044"]
