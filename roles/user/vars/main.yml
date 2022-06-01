@@ -1,2 +1,3 @@
 COMPONENT: user
 MONGO_CONNECT: true
+logType: json
