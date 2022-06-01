@@ -1,13 +1,3 @@
-- name: Copy the rsyslog config
-  template:
-    src: roboshop.conf
-    dest: /etc/rsyslog.d/roboshop.conf
-
-- name: Start rsyslog
-  systemd:
-    name: rsyslog
-    state: restarted
-
 - name: Copy the elastic beats repo
   template:
     src: elastic.repo
