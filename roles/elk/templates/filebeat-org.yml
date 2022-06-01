@@ -1,32 +1,9 @@
 filebeat.inputs:
   - type: log
-
-    # Unique ID among all inputs, an ID is required.
-    # id: my-filestream-id
-
-    # Change to true to enable this input configuration.
     enabled: true
     json.keys_under_root: true
-
-    # Paths that should be crawled and fetched. Glob based paths.
     paths:
       - /var/log/cart.log
-      #- c:\programdata\elasticsearch\logs\*
-
-    # Exclude lines. A list of regular expressions to match. It drops the lines that are
-    # matching any regular expression from the list.
-    #exclude_lines: ['^DBG']
-
-    # Include lines. A list of regular expressions to match. It exports the lines that are
-    # matching any regular expression from the list.
-    #include_lines: ['^ERR', '^WARN']
-
-    # Exclude files. A list of regular expressions to match. Filebeat drops the files that
-    # are matching any regular expression from the list. By default, no files are dropped.
-    #prospector.scanner.exclude_files: ['.gz$']
-
-    # Optional additional fields. These fields can be freely picked
-    # to add additional information to the crawled log files for filtering
     fields:
       appName: cart
       env: dev
@@ -47,26 +24,9 @@ filebeat.config.modules:
 
 setup.template.settings:
   index.number_of_shards: 1
-  #index.codec: best_compression
-  #_source.enabled: false
 
 
-# ================================== General ===================================
 
-# The name of the shipper that publishes the network data. It can be used to group
-# all the transactions sent by a single shipper in the web interface.
-#name:
-
-# The tags of the shipper are included in their own field with each
-# transaction published.
-#tags: ["service-X", "web-tier"]
-
-# Optional fields that you can specify to add additional information to the
-# output.
-#fields:
-#  env: staging
-
-# ================================= Dashboards =================================
 # These settings control loading the sample dashboards to the Kibana index. Loading
 # the dashboards is disabled by default and can be enabled either by setting the
 # options here or by using the `setup` command.
@@ -78,35 +38,6 @@ setup.template.settings:
 # website.
 #setup.dashboards.url:
 
-# =================================== Kibana ===================================
-
-# Starting with Beats version 6.0.0, the dashboards are loaded via the Kibana API.
-# This requires a Kibana endpoint configuration.
-setup.kibana:
-
-# Kibana Host
-# Scheme and port can be left out and will be set to the default (http and 5601)
-# In case you specify and additional path, the scheme is required: http://localhost:5601/path
-# IPv6 addresses should always be defined as: https://[2001:db8::1]:5601
-#host: "localhost:5601"
-
-# Kibana Space ID
-# ID of the Kibana Space into which the dashboards should be loaded. By default,
-# the Default Space will be used.
-#space.id:
-
-# =============================== Elastic Cloud ================================
-
-# These settings simplify using Filebeat with the Elastic Cloud (https://cloud.elastic.co/).
-
-# The cloud.id setting overwrites the `output.elasticsearch.hosts` and
-# `setup.kibana.host` options.
-# You can find the `cloud.id` in the Elastic Cloud web UI.
-#cloud.id:
-
-# The cloud.auth setting overwrites the `output.elasticsearch.username` and
-# `output.elasticsearch.password` settings. The format is `<user>:<pass>`.
-#cloud.auth:
 
 # ================================== Outputs ===================================
 
