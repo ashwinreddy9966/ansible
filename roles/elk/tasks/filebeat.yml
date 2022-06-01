@@ -1,4 +1,4 @@
 - name: Copy the elastic beats repo
   template:
     src: elastic.repo
-    dest: /etc/yum.repos.d/elastic.repo 
+    dest: /etc/yum.repos.d/elastic.repo
