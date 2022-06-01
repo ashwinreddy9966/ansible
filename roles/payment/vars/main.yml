@@ -1,3 +1,4 @@
 COMPONENT: payment
 APPUSER: roboshop
 ENV: dummy
+logType: raw
