@@ -105,18 +105,8 @@ setup.kibana:
 
 # ------------------------------ Logstash Output -------------------------------
 output.logstash:
-  # The Logstash hosts
   hosts: ["172.31.85.8:5044"]
 
-  # Optional SSL. By default is off.
-  # List of root certificates for HTTPS server verifications
-  #ssl.certificate_authorities: ["/etc/pki/root/ca.pem"]
-
-  # Certificate for SSL client authentication
-  #ssl.certificate: "/etc/pki/client/cert.pem"
-
-  # Client Certificate Key
-  #ssl.key: "/etc/pki/client/cert.key"
 
 # ================================= Processors =================================
 processors:
