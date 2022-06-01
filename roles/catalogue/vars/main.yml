@@ -1,2 +1,3 @@
 COMPONENT: catalogue
 MONGO_CONNECT: true
+logType: json
