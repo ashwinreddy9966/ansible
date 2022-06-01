@@ -1,2 +1,3 @@
 COMPONENT: cart
 logType: json
+logLocation: /var/log/cart.log
