@@ -52,12 +52,12 @@
     daemon_reload: yes
     enabled: yes
 
-- name: Copy the rsyslog config
-  template:
-    src: roboshop.conf
-    dest: /etc/rsyslog.d/roboshop.conf
+- name: Configure Rsyslog
+  ansible.builtin.include_role:
+    name: elk
+    tasks_from: rsyslog
 
-- name: Start rsyslog
-  systemd:
-    name: rsyslog
-    state: restarted
+- name: Configure Filebeat
+  ansible.builtin.include_role:
+    name: elk
+    tasks_from: filebeat
