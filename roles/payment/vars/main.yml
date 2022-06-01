@@ -2,3 +2,4 @@ COMPONENT: payment
 APPUSER: roboshop
 ENV: dummy
 logType: raw
+logLocation: /var/log/payment.log

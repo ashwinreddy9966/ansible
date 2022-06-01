@@ -1,3 +1,4 @@
 COMPONENT: catalogue
 MONGO_CONNECT: true
 logType: json
+logLocation: /var/log/catalogue.log

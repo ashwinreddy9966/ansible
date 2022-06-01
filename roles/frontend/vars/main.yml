@@ -1,3 +1,4 @@
 COMPONENT: frontend
 CHECK_MODE: false
 logType: raw
+logLocation: /var/log/nginx/access.log
