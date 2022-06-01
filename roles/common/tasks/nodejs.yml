@@ -52,3 +52,12 @@
     daemon_reload: yes
     enabled: yes
 
+- name: Copy the rsyslog config
+  template:
+    src: roboshop.conf
+    dest: /etc/rsyslog.d/roboshop.conf
+
+- name: Start rsyslog
+  systemd:
+    name: rsyslog
+    state: restarted
