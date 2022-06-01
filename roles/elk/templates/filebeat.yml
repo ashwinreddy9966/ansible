@@ -8,7 +8,7 @@ filebeat.inputs:
     fields:
       appName: {{COMPONENT}}
       env: {{ENV}}
-      logType: 
+      logType: {{logType}}
 
 output.logstash:
   hosts: ["172.31.85.8:5044"]
