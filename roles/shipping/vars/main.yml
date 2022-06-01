@@ -1,2 +1,3 @@
 COMPONENT: shipping
 logType: raw
+logLocation: /var/log/shipping.log
