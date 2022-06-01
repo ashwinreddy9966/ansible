@@ -6,7 +6,7 @@ filebeat.inputs:
     json.keys_under_root: true
 {% endif %}
     paths:
-      - /var/log/{{COMPONENT}}.log
+      - {{logLocation}}
     fields:
       appName: {{COMPONENT}}
       env: {{ENV}}
