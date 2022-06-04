@@ -12,6 +12,13 @@ filebeat.inputs:
       env: {{ENV}}
       logType: {{logType}}
 
+{% if COMPONENT == "shipping" %}
+    multiline.type: pattern
+    multiline.pattern: '^[0-9]'
+    multiline.negate: true
+    multiline.match: after
+{% endif %}
+
 output.logstash:
   hosts: ["172.31.85.8:5044"]
 
