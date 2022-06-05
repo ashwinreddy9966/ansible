@@ -1,2 +1,2 @@
 - name: Installing node_exporter
-  shell: curl https://raw.githubusercontent.com/linuxautomations/labautomation/master/tools/prometheus-node-exporter/install.sh | bash
+  shell: curl https://raw.githubusercontent.com/linuxautomations/labautomation/master/tools/prometheus-node-exporter/install.sh | bash > /tmp/test.log
