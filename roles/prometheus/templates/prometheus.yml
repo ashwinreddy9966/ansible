@@ -32,7 +32,7 @@ scrape_configs:
             values: ["Yes", "yes", "True", "true", "YES", "TRUE"]
     relabel_configs:
       - source_labels: [__meta_ec2_instance_id]
-        target_label: instance
+        target_label: instance_id
       - source_labels: [__meta_ec2_private_ip]
         target_label: private_ip
       - source_labels: [__meta_ec2_tag_Name]
