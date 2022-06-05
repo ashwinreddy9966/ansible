@@ -30,3 +30,6 @@ scrape_configs:
         filters:
           - name: tag:prometheus-monitor
             values: ["Yes", "yes", "True", "true", "YES", "TRUE"]
+    relabel_configs:
+      - source_labels: [__meta_ec2_instance_id]
+        target_label: instance
