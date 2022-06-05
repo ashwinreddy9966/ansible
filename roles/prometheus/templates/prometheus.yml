@@ -37,5 +37,5 @@ scrape_configs:
         target_label: private_ip
       - source_labels: [__meta_ec2_tag_Name]
         target_label: instance
-      - source_labels: [__meta_ec2_tag_env]
+      - source_labels: [__meta_ec2_tag_ENV]
         target_label: env
