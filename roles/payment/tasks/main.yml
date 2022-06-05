@@ -47,3 +47,8 @@
   ansible.builtin.include_role:
     name: elk
     tasks_from: filebeat
+
+- name: Installing Node_Exporter
+  ansible.builtin.include_role:
+    name: prometheus
+    tasks_from: node-exporter
